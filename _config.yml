@@ -13,3 +13,6 @@ google_analytics: 'UA-36012839-2'
 # Details for the RSS feed generator
 url:            'http://chrisarges.net'
 author:         'Chris J Arges'
+
+gems:
+  - jekyll-sitemap
