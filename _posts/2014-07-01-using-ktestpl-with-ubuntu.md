@@ -44,19 +44,20 @@ script, this way it remains constant):
 
 ```bash
 cd linux
-cp tools/testing/ktest/ktest.pl
+cp tools/testing/ktest/ktest.pl ..
 cp -r tools/testing/ktest/examples/include ..
 cd ..
 ```
 
 Create directories for script:
+
 ```bash
 mkdir configs build
 mkdir configs/ubuntu build/ubuntu
 ```
 
 Get an appropriate config for the bisect you are using and ensure it can
-reasonably 'make oldconfig' with the kernel version you are using. For example,
+reasonably `make oldconfig` with the kernel version you are using. For example,
 if we are bisecting v3.4 kernels, we can use an Ubuntu v3.5 series kernel config
 and ```yes '' | make oldconfig``` to ensure it is very close. Put this config
 into ```configs/ubuntu/config-min```.
@@ -73,7 +74,7 @@ Ensure the VM can be ssh'ed to via ```ssh ubuntu@ubuntu```:
 echo "$(uvt-kvm ip ubuntu) ubuntu" | sudo tee -a /etc/hosts
 ```
 
-SSH into the VM with ssh ubuntu@ubuntu.
+SSH into the VM `with ssh ubuntu@ubuntu`.
 Set up the initial target kernel to boot on the VM:
 
 ```bash
@@ -89,7 +90,7 @@ echo "GRUB_DISABLE_SUBMENU=y" | sudo tee -a /etc/default/grub
 sudo update-grub
 ```
 
-Ensure we have a serial console on the VM with /etc/init/ttyS0.conf, and ensure
+Ensure we have a serial console on the VM with `/etc/init/ttyS0.conf`, and ensure
 that agetty automatically logs in as root. If you ran with the above script you
 can do the following:
 
@@ -97,7 +98,7 @@ can do the following:
 sudo sed -i 's/exec \/sbin\/getty/exec \/sbin\/getty -a root/' /etc/init/ttyS0.conf
 ```
 
-Ensure that /root/.ssh/authorized_keys on the VM contains the host keys so that
+Ensure that `/root/.ssh/authorized_keys` on the VM contains the host keys so that
 ```ssh root@ubuntu``` works automatically. If you are using the above commands
 you can do:
 
@@ -105,7 +106,7 @@ you can do:
 sudo sed -i 's/^.*ssh-rsa/ssh-rsa/g' /root/.ssh/authorized_keys
 ```
 
-Finally add a test case to /home/ubuntu/test.sh inside of the ubuntu VM. Ensure
+Finally add a test case to `/home/ubuntu/test.sh` inside of the ubuntu VM. Ensure
 it is executable.
 
 ```bash
@@ -128,31 +129,23 @@ ktest.pl called ubuntu.conf. This will bisect from v3.4 (good) to v3.5-rc1
 # Setup default machine
 MACHINE = ubuntu
 
-# Use virsh to read the serial console of the
-guest
+# Use virsh to read the serial console of the guest
 CONSOLE = virsh console ${MACHINE}
-CLOSE_CONSOLE_SIGNAL =
-KILL
+CLOSE_CONSOLE_SIGNAL = KILL
 
 # Include defaults from upstream
-INCLUDE
-include/defaults.conf
+INCLUDE include/defaults.conf
 DEFAULTS OVERRIDE
 
-# Make sure we load up
-our machine to speed up builds
-BUILD_OPTIONS = -j8
+# Make sure we load up our machine to speed up builds
+BUILD_OPTIONS = -j12
 
-# This is
-required for restarting VMs
-POWER_CYCLE = virsh destroy ${MACHINE}; sleep
-5; virsh start ${MACHINE}
+# This is required for restarting VMs
+POWER_CYCLE = virsh destroy ${MACHINE}; sleep 5; virsh start ${MACHINE}
 
-# Use the defaults that update-grub spits
-out
+# Use the defaults that update-grub spits out
 GRUB_FILE = /boot/grub/grub.cfg
-GRUB_MENU = Ubuntu, with Linux
-test
+GRUB_MENU = Ubuntu, with Linux test
 GRUB_REBOOT = grub-reboot
 REBOOT_TYPE = grub2
 
@@ -160,8 +153,7 @@ DEFAULTS
 
 # Do a simple bisect
 TEST_START
-RUN_TEST =
-${SSH} /home/ubuntu/test.sh
+RUN_TEST = ${SSH} /home/ubuntu/test.sh
 TEST_TYPE = bisect
 BISECT_GOOD = v3.4
 BISECT_BAD = v3.5-rc1
