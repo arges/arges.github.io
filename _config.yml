@@ -3,6 +3,8 @@ description: code, music, creation
 meta_description: "The Personal Blog of Chris J Arges"
 
 markdown: redcarpet
+redcarpet:
+  extensions: ["tables"]
 highlighter: pygments
 logo: false
 paginate: 10
