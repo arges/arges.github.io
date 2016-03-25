@@ -5,7 +5,7 @@ meta_description: "The Personal Blog of Chris J Arges"
 markdown: kramdown
 redcarpet:
   extensions: ["tables"]
-highlighter: pygments
+highlighter: rouge
 logo: false
 paginate: 10
 baseurl: /
