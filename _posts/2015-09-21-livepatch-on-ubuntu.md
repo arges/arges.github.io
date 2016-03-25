@@ -37,21 +37,21 @@ the proper linux-image ddeb package.
 If the ddebs are still available in the archive, you can do the following. Keep
 in mind downloading the ddeb package takes a bit of time.
 
-```bash
+~~~bash
 echo "deb http://ddebs.ubuntu.com $(lsb_release -cs) main restricted universe multiverse" | sudo tee -a /etc/apt/sources.list.d/ddebs.list
 sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 428D7C01
 sudo apt-get update
 sudo apt-get install linux-image-`uname -r`-dbgsym
-```
+~~~
 
 Also be sure to install dependencies for building the kernel, kpatch, and the
 kernel headers (in case they aren't already installed).
 
-```
+~~~
 sudo apt-get install linux-headers-`uname -r`
 sudo apt-get build-dep linux
 sudo apt-get install git make gcc libelf-dev dpkg-dev
-```
+~~~
 
 ### Simple Example
 
@@ -59,13 +59,13 @@ Before using kpatch I'll show a simple example of creating a basic module. In
 the kernel sources, there is a sample file which can be built [here][5]. Using
 that patch we can create a simple example.
 
-```
+~~~
 wget http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/plain/samples/livepatch/livepatch-sample.c
-```
+~~~
 
 Create a Makefile as follows:
 
-```bash
+~~~bash
 obj-m := livepatch-sample.o
 KDIR := /lib/modules/$(shell uname -r)/build
 PWD := $(shell pwd)
@@ -73,12 +73,12 @@ default:
         $(MAKE) -C $(KDIR) SUBDIRS=$(PWD) modules
 clean:
         $(MAKE) -C $(KDIR) SUBDIRS=$(PWD) clean
-```
+~~~
 
 Make the module, test before, insert the module and test after
 insertion:
 
-```bash
+~~~bash
 $ make
 make -C /lib/modules/4.2.0-10-generic/build SUBDIRS=/home/ubuntu/experiment modules
 make[1]: Entering directory '/usr/src/linux-headers-4.2.0-10-generic'
@@ -97,7 +97,7 @@ $ cat /proc/cmdline
 this has been live patched
 $ lsmod | grep livepatch
 livepatch_sample       16384  1
-```
+~~~
 
 Note, this module is in use once is it inserted. This is a hardcoded value
 because the current version does not have a [consistency][6] model which will
@@ -116,21 +116,21 @@ turns that into an actual kernel module compatible with livepatch.
 
 Let's checkout and build the project:
 
-```bash
+~~~bash
 git clone https://github.com/dynup/kpatch.git
 cd ../kpatch && make
-```
+~~~
 
 In this example, we'll patch the Ubuntu kernel sources. Therefore the first step
 would be to clone a git tree with our current kernel. Next we make a
 modification and export the diff.
 
-```bash
+~~~bash
 git clone git://kernel.ubuntu.com/ubuntu/ubuntu-wily.git
 cd ubuntu-wily
 # make modifications to a file
 git diff > ~/mypatch.diff
-```
+~~~
 
 Now we can feed this into kpatch-build to create a compatible livepatch module.
 Using the below command will automatically do the right thing for the installed
@@ -141,7 +141,7 @@ want to ensure you were using the same version of the toolchain. You should
 compare to see if there was a major version change and keep in mind this could
 cause unwanted failures.
 
-```bash
+~~~bash
 $ ./kpatch-build/kpatch-build -t vmlinux --skip-gcc-check meminfo-string.patch
 
 WARNING: Skipping gcc version matching check (not recommended)
@@ -158,7 +158,7 @@ Building patch module: kpatch-mypatch.ko
 SUCCESS
 
 $ sudo insmod kpatch-mypatch.ko
-```
+~~~
 
 It works!
 

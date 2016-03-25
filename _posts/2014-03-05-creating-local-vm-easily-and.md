@@ -12,9 +12,9 @@ blogger_orig_url: http://dinosaursareforever.blogspot.com/2014/03/creating-local
 ---
 
 This is the nifty little snippet I use to create a quick and dirty VM for
-testing. Just ```apt-get install vmbuilder``` and run the following:
+testing. Just ~~~apt-get install vmbuilder~~~ and run the following:
 
-```bash
+~~~bash
 NAME="ubuntu"
 vmbuilder kvm ubuntu --arch 'amd64' --suite 'precise' \
 --rootsize '8096' \
@@ -29,7 +29,7 @@ vmbuilder kvm ubuntu --arch 'amd64' --suite 'precise' \
 -o \
 -v --debug \
 --hostname ${NAME}
-```
+~~~
 
 If you need additional help consult the
 [serverguide](https://help.ubuntu.com/12.04/serverguide/jeos-and-vmbuilder.html

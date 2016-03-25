@@ -28,14 +28,14 @@ the image.
 
 Below is a snippet to be run after using Scott's original script:
 
-```bash
+~~~bash
 # install cloud image
 sudo virt-install --connect qemu:///system \
   --ram 1024 -n ubuntu --os-type=linux --os-variant=ubuntuprecise \
   --disk path=./disk.img,device=disk,bus=virtio,format=qcow2 \
   --disk path=./my-seed.img,bus=virtio,format=raw \
   --vcpus=1 --vnc --noautoconsole --import
-```
+~~~
 
 [1]: http://ubuntu-smoser.blogspot.com/2013/02/using-ubuntu-cloud-images-without-cloud.html
 

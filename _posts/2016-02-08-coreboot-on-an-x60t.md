@@ -56,7 +56,7 @@ raspi-config or by ensuring the module is loaded.
 
 Next, install flashrom and get a backup of the existing ROM.
 
-```bash
+~~~bash
 sudo apt-get update
 sudo apt-get install -y build-essential pciutils usbutils libpci-dev libusb-1.0-0-dev libftdi1 libftdi-dev zlib1g-dev subversion
 svn co svn://flashrom.org/flashrom/trunk flashrom
@@ -64,7 +64,7 @@ cd flashrom/ && make -j`nproc`
 sudo modprobe spi-bcm2835
 sudo modprobe spidev
 sudo ./flashrom -p linux_spi:dev=/dev/spidev0.0,spispeed=512 -r factory.bin -V
-```
+~~~
 
 Run the flashrom read a couple of times and ensure that the factory.bin is
 consistent by checking its md5sum. If it fails to detect a chip, you may have
@@ -75,12 +75,12 @@ but I was unable to get this working with my device. The [following][2] gives
 more detail about the procedure. In the following, 'factory.bin' is the BIOS
 you've just read in the previous step.
 
-```bash
+~~~bash
 git clone http://review.coreboot.org/p/bios_extract.git
 cd bios_extract && make
 ./bios_extract factory.bin
 romheaders oprom_0.rom
-```
+~~~
 
 Flashing
 ========
@@ -93,7 +93,7 @@ determine an appropriate config, compile and flash.
 For reference here is the [link][6] to the config file I used. More information
 about building coreboot can be found [here][7].
 
-```bash
+~~~bash
 sudo apt-get install libncurses5-dev
 git clone http://review.coreboot.org/p/coreboot
 cd coreboot
@@ -101,7 +101,7 @@ git submodule update --init --checkout
 make menuconfig
 util/crossgcc/buildgcc -j`nproc`
 make -j`nproc`
-```
+~~~
 
 If you'd like to include the VGA ROM, you'll need to copy that file into the
 coreboot directory. When running menuconfig look for the optional VGA ROM and
@@ -111,9 +111,9 @@ ensure the filename matches what you have in the directory.
 Once the build is complete the rom is located in `build/coreboot.rom`. You can
 take this and flash your device using the following from the RPi2 board:
 
-```bash
+~~~bash
 sudo ./flashrom -p linux_spi:dev=/dev/spidev0.0,spispeed=512 -w coreboot.rom -V
-```
+~~~
 
 Once this is complete, power off your machine fully and do a cold boot.
 Eventually you'll see the SeaBIOS screen and be able to boot into your selected

@@ -12,14 +12,14 @@ blogger_id: tag:blogger.com,1999:blog-7705678145617402978.post-52219544406309061
 blogger_orig_url: http://dinosaursareforever.blogspot.com/2013/09/building-proper-debian-source-package.html
 ---
 
-How can one use DKMS to build a proper debian source package? The ```mkdsc```
+How can one use DKMS to build a proper debian source package? The ~~~mkdsc~~~
 command will actually generate one automatically, but there are a few more
 steps to simplify it, and bring it up to date.
 
 First follow the steps [here][1] for setting up a DKMS package. Make sure you
 can build it using dkms. Then do the following:
 
-```bash
+~~~bash
 #First pull in some dependencies as necessary
 sudo apt-get install devscripts debhelper
 
@@ -33,11 +33,11 @@ cp /var/lib/dkms/hello/0.1/dsc/* .
 # Extract the .dsc to be able to edit the directory
 dpkg-source -x hello-dkms_0.1.dsc 
 cd hello-dkms-0.1
-```
+~~~
 
 If we run debuild -uc -us, we see a few lintian errors and warnings:
 
-```bash
+~~~bash
 W: hello-dkms source: package-file-is-executable debian/changelog
 W: hello-dkms source: package-file-is-executable debian/control
 W: hello-dkms source: package-file-is-executable debian/copyright
@@ -50,13 +50,13 @@ W: hello-dkms source: ancient-standards-version 3.8.1 (current is 3.9.3)
 E: hello-dkms: no-copyright-file
 E: hello-dkms: extended-description-is-empty
 W: hello-dkms: non-standard-dir-perm usr/src/hello-0.1/ 0655 != 0755
-```
+~~~
 
 The errors are normal, and if this was a real package those will be taken care
 of since that information will need to be filled in anyway.
 
 To address the executable issues, just chmod -x those files:
-```chmod -x debian/co* debian/dirs debian/ch*```.
+~~~chmod -x debian/co* debian/dirs debian/ch*~~~.
 
 To address some of the other issues, we can just completely modify and change
 the rules file. Because debhelper has a helper for DKMS specifically we should
@@ -64,12 +64,12 @@ use it.
 
 In addition, if we do something like dch -i you’ll notice some errors, since
 our source directory is hardcoded to hello-0.1. So we can modify it to be in a
-```src``` directory and get around this:
-```mv hello-0.1 src```
+~~~src~~~ directory and get around this:
+~~~mv hello-0.1 src~~~
 
-Here is how I modified my ```debian/rules``` file:
+Here is how I modified my ~~~debian/rules~~~ file:
 
-```bash
+~~~bash
 #!/usr/bin/make -f
 # -*- makefile -*-
 
@@ -92,15 +92,15 @@ override_dh_dkms:
 
 override_dh_auto_build:
 override_dh_auto_install:
-```
+~~~
 
 Now there are some things that can be removed from the package completely:
-```rm common.postinst Makefile```
+~~~rm common.postinst Makefile~~~
 
 Now to update the control file to use modern versions, a proper description,
 and make yourself a maintainer!
 
-```bash
+~~~bash
 Source: hello-dkms
 Section: misc
 Priority: optional
@@ -113,7 +113,7 @@ Architecture: all
 Depends: dkms, ${misc:Depends}
 Description: hello driver in DKMS format.
 A completely useful kernel module.
-```
+~~~
 
 Now debuild -uc -us and fix remaining issues.
 

@@ -14,7 +14,7 @@ blogger_orig_url: http://dinosaursareforever.blogspot.com/2013/12/automatic-bise
 
 I had some fun debugging a performance [issue][1] after VM migration on v1.0.
 Because this was fixed in newer versions, a bisect was in order. Doing this
-manually becomes very tedious so writing some scripts to use ```git bisect run```
+manually becomes very tedious so writing some scripts to use ~~~git bisect run~~~
 really helps. Here I'll document how I did this in case others find it useful
 when trying to bisect issues in qemu.
 
@@ -30,12 +30,12 @@ between two release tags you should start a bisect between those tags.
 
 Next run:
 
-```bash
+~~~bash
 git bisect start
 git bisect good <good tag>
 git bisect bad <bad tag>
 git bisect run ../bisect-run
-```
+~~~
 
 I ran into a few gotchas that may be bugs that really need fixing. Occasionally
 when running in '-noconsole' mode, I wouldn't see any prompt for a very long

@@ -20,9 +20,9 @@ reboot into. Note the menu and submenus to construct a string of the form
 `menu>submenu`. For example if you want to reboot into an older kernel you can
 do:
 
-```bash
+~~~bash
 sudo grub-reboot "Advanced options for Ubuntu>Ubuntu, with Linux 4.2.0-16-generic"
 sudo reboot
-```
+~~~
 
 After rebooting you'll be in the 4.2.0-16-generic kernel!

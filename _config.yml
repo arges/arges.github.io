@@ -2,7 +2,7 @@ name: Dinosaurs Are Forever
 description: code, music, creation
 meta_description: "The Personal Blog of Chris J Arges"
 
-markdown: redcarpet
+markdown: kramdown
 redcarpet:
   extensions: ["tables"]
 highlighter: pygments

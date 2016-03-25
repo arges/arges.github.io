@@ -21,9 +21,9 @@ further investigation I found the following.
 Module installation takes a really long time, and when building with
 `make deb-pkg -jN`, you'll see output like the following:
 
-```
+~~~
 make[2]: warning: jobserver unavailable: using -j1.  Add `+' to parent make rule.
-```
+~~~
 
 The main issue here is what we're calling `$MAKE` from inside a bash script and
 it no longer has its jobserver argument. In order to fix this we need to ensure
@@ -32,7 +32,7 @@ that the parent Makefile calls the script with the '+' prepended to the call.
 Next, this particular for loop in `scripts/package/builddep` causes making debug
 packages take forever:
 
-```bash
+~~~bash
 for module in $(find $tmpdir/lib/modules/ -name *.ko -printf '%P\n'); do
 	module=lib/modules/$module                              
 	mkdir -p $(dirname $dbg_dir/usr/lib/debug/$module)      
@@ -43,11 +43,11 @@ for module in $(find $tmpdir/lib/modules/ -name *.ko -printf '%P\n'); do
 	# then add a link to those                              
 	$OBJCOPY --add-gnu-debuglink=$dbg_dir/usr/lib/debug/$module $tmpdir/$module
 done   
-```
+~~~
 
 We can use the xargs paradigm to make it much quicker:
 
-```bash
+~~~bash
 find $tmpdir/lib/modules/ -name *.ko -printf '%P\n' | xargs -I {} sh -c '
 	mkdir -p $(dirname '"$dbg_dir"'/usr/lib/debug/lib/modules/$1);'"
 	# only keep debug symbols in the debug file
@@ -59,20 +59,20 @@ find $tmpdir/lib/modules/ -name *.ko -printf '%P\n' | xargs -I {} sh -c '
 	$OBJCOPY --add-gnu-debuglink=$dbg_dir/usr/lib/debug/lib/modules/{} \
 		$tmpdir/lib/modules/{};
 " -- {}
-```
+~~~
 
 ### Results
 
 Using a distro config (from Ubuntu) and profiling the following after running
 make clean:
 
-```
+~~~
 time make deb-pkg -j`nproc`
-```
+~~~
 
 Results without the patches:
 
-```
+~~~
 real    41m39.846s 
 user    179m10.908s
 sys     138m4.660s 
@@ -81,11 +81,11 @@ real    40m56.240s
 user    182m17.292s
 sys     140m18.812s
 
-```
+~~~
 
 Results with the patches:
 
-```
+~~~
 real    35m27.924s     
 user    181m45.868s    
 sys     148m55.620s    
@@ -94,7 +94,7 @@ real    36m22.633s
 user    182m28.028s
 sys     148m17.724s
 
-```
+~~~
 
 A speedup of 5m isn't that bad, and keep in mind much of this is the actual
 compile too.

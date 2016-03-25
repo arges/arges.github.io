@@ -28,36 +28,36 @@ proper crashdump. In order to setup crashdump, on an Ubuntu machine we can do
 the following. First we need to install and setup crashdump, more info can be
 found [here][2]
 
-```bash
+~~~bash
 sudo apt-get install linux-crashdump
-```
+~~~
 
 Select NO unless you really would like to use kexec for your reboots.
 Next we need to enable it since by default it is disabled.
 
-```bash
+~~~bash
 sudo sed -i 's/USE_KDUMP=0/USE_KDUMP=1/' /etc/default/kdump-tools
-```
+~~~
 
 Reboot to ensure the kernel cmdline options are properly setup
 
-```bash
+~~~bash
 sudo reboot
-```
+~~~
 
 After reboot run the following:
 
-```bash
+~~~bash
 sudo kdump-config show
-```
+~~~
 
 If this command shows 'ready to dump', then we can test a crash to ensure kdump
 has enough memory and will dump properly.  This command will crash your
 computer, so hopefully you are doing this on a test machine.
 
-```bash
+~~~bash
 echo c | sudo tee /proc/sysrq-trigger
-```
+~~~
 
 The machine will reboot and you'll see a crash in /var/crash.  All of this is
 already documented [here][2], so now we need to enable panics for hang and
@@ -65,18 +65,18 @@ lockup conditions.  Now we need to enable crashing on lockups, so we'll enable
 many cases at once.  Edit /etc/default/grub and change this line to the
 following:
 
-```bash
+~~~bash
 GRUB_CMDLINE_LINUX="nmi_watchdog=panic hung_task_panic=1 softlockup_panic=1 unknown_nmi_panic"
-```
+~~~
 
 In addition you could enable these via /proc/sys/kernel or sysctl. For more
 information about these parameters there is documentation [here][3] If you've
 used the command line change, update grub and then reboot.
 
-```bash
+~~~bash
 sudo update-grub
 sudo reboot
-```
+~~~
 
 Now your machine should crash when it locks up, and you'll get a nice crashdump
 to analyze. If you want to test such a setup I wrote a [module][4] that induces

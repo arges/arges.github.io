@@ -18,11 +18,11 @@ features that help when you need to send from multiple accounts.
 
 ### Git Setup
 
-First, install git and git-email. Then, setup ```~/.gitconfig``` for your user
+First, install git and git-email. Then, setup ~~~~/.gitconfig~~~ for your user
 and proper sendemail section. This shows a sendemail setup for a typical single
 gmail account.
 
-```bash
+~~~bash
 [user]  
     name = Your Name
     email = user@gmail.com  
@@ -34,12 +34,12 @@ gmail account.
     smtppass = PASSWORD
     chainreplyto = true
     smtpserverport = 587
-```
+~~~
 
 However, it may be more useful to be able to easily send from multiple accounts.
-This can be accomplished using the ```--identify``` flag in git.
+This can be accomplished using the ~~~--identify~~~ flag in git.
 
-```bash
+~~~bash
 [user]
     name = Your Name
     email =user@gmail.com
@@ -63,7 +63,7 @@ This can be accomplished using the ```--identify``` flag in git.
     smtpencryption = tls
     smtpserverport = 587
     chainreplyto = false
-```
+~~~
 
 This way when you can select your identity to fill in these values. In addition
 if you specify no identity you can have default fields if necessary. If you
@@ -73,26 +73,26 @@ show you more [options][2].
 ### Formatting the Patch
 
 Once we have the patch committed to the HEAD on our branch we format the patch
-using: ```git format-patch -1```.
+using: ~~~git format-patch -1~~~.
 
-This should produce a patch like ```0001-blah.patch```.
+This should produce a patch like ~~~0001-blah.patch~~~.
 Then check for formatting errors using the checkpatch script provided in the
-kernel repository: ```./scripts/checkpatch.pl 0001-blah.patch```.
+kernel repository: ~~~./scripts/checkpatch.pl 0001-blah.patch~~~.
 
 You should read the kernel [documentation][3] to get a better idea of what is
 expected.
 
 ### Sending A Single Patch
 
-Now we are ready to send a patch. The ```./scripts/get_maintainer.pl``` in the kernel
+Now we are ready to send a patch. The ~~~./scripts/get_maintainer.pl~~~ in the kernel
 repository provides a way to specify whom needs to be CC'ed based on the
 maintainers file, the history of the file, and which lines of code are changed.
 
 
-```bash
+~~~bash
 git send-email --to <ml_list> --cc-cmd="scripts/get_maintainer.pl -i" \
   <0001-patch.patch>
-```
+~~~
 
 The -i means the script is interactive and you can edit the list before sending.
 Once you have completed the commands, the patch should be sent!
@@ -102,19 +102,19 @@ Once you have completed the commands, the patch should be sent!
 If you have your patches in a public git repository, it is sometimes easier to
 send pull-requests for patches instead of sending.
 
-```bash
+~~~bash
 git request-pull <hash right before your changes> \
     git://<public git repo> > request-pull.txt
-```
+~~~
 
 Then add a 'Subject: ' line in the request-pull.txt that explains the pull
 request. Adding --subject doesn't seem to work for me. In addition add any other
 text.
 
-```bash
+~~~bash
 git send-email --identity=gmail --to=<mailing list> \
     ./request-pull.txt
-```
+~~~
 
 With this you should have a pull request sent!
 

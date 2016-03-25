@@ -17,14 +17,14 @@ an alternative kernel when starting a machine. Here's how to do it.
 This is assuming we have already commissioned a node, but have not started it.
 
 If we are using the _normal_ installer with MAAS do the following: Edit
-```/etc/maas/preseeds/preseed_master``` on your maas-server
+~~~/etc/maas/preseeds/preseed_master~~~ on your maas-server
 
 Add the second line as shown:
 
-```bash
+~~~bash
 d-i base-installer/kernel/image string linux-server d-i
 base-installer/kernel/override-image string linux-generic-lts-saucy
-```
+~~~
 
 Start the node, Now when you boot you should be using the 3.11 series kernel.
 

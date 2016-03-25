@@ -28,12 +28,12 @@ can connect wirelesly to your board.
 Next add your wireless network ssid and psk to
 `/etc/wpa_supplicant/wpa_supplicant.conf`. Like this:
 
-```
+~~~
 network={
   ssid="network_name"
   psk="network_password"
 }
-```
+~~~
 
 Reboot and ensure it automatically connects to the wireless.
 
@@ -92,10 +92,10 @@ the project [here][2]. Once downloaded you can build on a local machine. First
 ensure that golang-go is installed. Next you can build using the following
 inside the cargo directory:
 
-```
+~~~
 go get ./...
 go build GOARCH=arm GOARM=6 car.go
-```
+~~~
 
 This targets ARMv6, if you have another board you may need to set GOARM
 differently.

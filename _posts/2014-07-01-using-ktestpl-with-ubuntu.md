@@ -22,94 +22,94 @@ machine. In this example I'm using 'ubuntu' as the VM name.
 
 First, ensure you have all dependencies correctly setup:
 
-```bash
+~~~bash
 sudo apt-get install libvirt-bin qemu-kvm cpu-checker virtinst uvtool git
 sudo apt-get build-dep linux-image-`uname -r`
-```
+~~~
 
-Now, ensure kvm works: ```kvm-ok```
+Now, ensure kvm works: ~~~kvm-ok~~~
 
 In this example we are using uvtool to create VMs using cloud images, but you
 could just as easily use a preseed install or a manual install via an ISO.
 
 Next sync the cloud image, and clone the necessary git directory:
 
-```bash
+~~~bash
 uvt-simplestreams-libvirt sync release=trusty arch=amd64
 git clone git://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git linux.git
-```
+~~~
 
 Copy ktest.pl outside of the linux kernel (since bisecting it also changes the
 script, this way it remains constant):
 
-```bash
+~~~bash
 cd linux
 cp tools/testing/ktest/ktest.pl ..
 cp -r tools/testing/ktest/examples/include ..
 cd ..
-```
+~~~
 
 Create directories for script:
 
-```bash
+~~~bash
 mkdir configs build
 mkdir configs/ubuntu build/ubuntu
-```
+~~~
 
 Get an appropriate config for the bisect you are using and ensure it can
 reasonably `make oldconfig` with the kernel version you are using. For example,
 if we are bisecting v3.4 kernels, we can use an Ubuntu v3.5 series kernel config
-and ```yes '' | make oldconfig``` to ensure it is very close. Put this config
-into ```configs/ubuntu/config-min```.
+and ~~~yes '' | make oldconfig~~~ to ensure it is very close. Put this config
+into ~~~configs/ubuntu/config-min~~~.
 
 Create the VM, ensure you have ssh keys setup on your local machine first:
 
-```bash
+~~~bash
 uvt-kvm create ubuntu release=trusty arch=amd64 --password ubuntu
-```
+~~~
 
-Ensure the VM can be ssh'ed to via ```ssh ubuntu@ubuntu```:
+Ensure the VM can be ssh'ed to via ~~~ssh ubuntu@ubuntu~~~:
 
-```bash
+~~~bash
 echo "$(uvt-kvm ip ubuntu) ubuntu" | sudo tee -a /etc/hosts
-```
+~~~
 
 SSH into the VM `with ssh ubuntu@ubuntu`.
 Set up the initial target kernel to boot on the VM:
 
-```bash
+~~~bash
 sudo cp /boot/vmlinuz-`uname -r` /boot/vmlinuz-test
 sudo cp /boot/initrd.img-`uname -r` /boot/initrd.img-test
-```
+~~~
 
 Ensure SUBMENUs are disabled on the VM, as the grub2 detection script in ktest.pl
 fails with submenus, and update grub.
 
-```bash
+~~~bash
 echo "GRUB_DISABLE_SUBMENU=y" | sudo tee -a /etc/default/grub
 sudo update-grub
-```
+~~~
 
 Ensure we have a serial console on the VM with `/etc/init/ttyS0.conf`, and ensure
 that agetty automatically logs in as root. If you ran with the above script you
 can do the following:
 
-```bash
+~~~bash
 sudo sed -i 's/exec \/sbin\/getty/exec \/sbin\/getty -a root/' /etc/init/ttyS0.conf
-```
+~~~
 
 Ensure that `/root/.ssh/authorized_keys` on the VM contains the host keys so that
-```ssh root@ubuntu``` works automatically. If you are using the above commands
+~~~ssh root@ubuntu~~~ works automatically. If you are using the above commands
 you can do:
 
-```bash
+~~~bash
 sudo sed -i 's/^.*ssh-rsa/ssh-rsa/g' /root/.ssh/authorized_keys
-```
+~~~
 
 Finally add a test case to `/home/ubuntu/test.sh` inside of the ubuntu VM. Ensure
 it is executable.
 
-```bash
+~~~bash
 
 #!/bin/bash
 # Make a unique string
@@ -119,13 +119,13 @@ echo $STRING > /dev/kmsg
 sleep 5
 grep $STRING /var/log/syslog
 # This should return 0.
-```
+~~~
 
 Now exit out of the machine and create the following configuration file for
 ktest.pl called ubuntu.conf. This will bisect from v3.4 (good) to v3.5-rc1
 (bad), and run the test case that we put into the VM.
 
-```bash
+~~~bash
 # Setup default machine
 MACHINE = ubuntu
 
@@ -162,14 +162,14 @@ BISECT_TYPE = test
 TEST = ${RUN_TEST}
 BISECT_CHECK = 1
 
-```
+~~~
 
 Now you are ready to run the bisection (this will take many, many hours depending on the
 speed of your machine):
 
-```bash
+~~~bash
 ./ktest.pl ubuntu.conf
-```
+~~~
 
 [1]: http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/tree/tools/testing/ktest?id=HEAD
 

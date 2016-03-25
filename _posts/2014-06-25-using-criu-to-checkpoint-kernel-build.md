@@ -20,7 +20,7 @@ While most of us could probably just reboot and rebuild, why not checkpoint it
 and save the progress; then restore after the system update?  I admit its not
 the most useful example; but it is pretty cool nonetheless.
 
-```bash
+~~~bash
 sudo apt-get install criu
 # start build; save the PID for later
 cd linux; make clean; make defconfig
@@ -32,7 +32,7 @@ sudo criu dump --shell-job -t $(cat ~/make.pid)
 # restore your build
 cd ~/cr-build
 sudo criu restore --shell-job -t $(cat ~/make.pid)
-```
+~~~
 
 And you're building again!
 

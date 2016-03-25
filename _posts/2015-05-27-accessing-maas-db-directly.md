@@ -17,16 +17,16 @@ database directly.
 
 Just use the following as root:
 
-```
+~~~
 maas-region-admin dbshell --installed
-```
+~~~
 
 Now you have access to an SQL command line interface.
 
 For example if I want to see all hostnames and power_parameters for my servers,
 I can do the following:
 
-```
+~~~
 select hostname,power_parameters from maasserver_node;
-```
+~~~
 
