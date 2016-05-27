@@ -12,7 +12,7 @@ blogger_id: tag:blogger.com,1999:blog-7705678145617402978.post-52219544406309061
 blogger_orig_url: http://dinosaursareforever.blogspot.com/2013/09/building-proper-debian-source-package.html
 ---
 
-How can one use DKMS to build a proper debian source package? The ~~~mkdsc~~~
+How can one use DKMS to build a proper debian source package? The `mkdsc`
 command will actually generate one automatically, but there are a few more
 steps to simplify it, and bring it up to date.
 
@@ -56,7 +56,10 @@ The errors are normal, and if this was a real package those will be taken care
 of since that information will need to be filled in anyway.
 
 To address the executable issues, just chmod -x those files:
-~~~chmod -x debian/co* debian/dirs debian/ch*~~~.
+
+~~~bash
+chmod -x debian/co* debian/dirs debian/ch*
+~~~
 
 To address some of the other issues, we can just completely modify and change
 the rules file. Because debhelper has a helper for DKMS specifically we should
@@ -64,10 +67,13 @@ use it.
 
 In addition, if we do something like dch -i you’ll notice some errors, since
 our source directory is hardcoded to hello-0.1. So we can modify it to be in a
-~~~src~~~ directory and get around this:
-~~~mv hello-0.1 src~~~
+`src` directory and get around this:
 
-Here is how I modified my ~~~debian/rules~~~ file:
+~~~bash
+mv hello-0.1 src
+~~~
+
+Here is how I modified my `debian/rules` file:
 
 ~~~bash
 #!/usr/bin/make -f
@@ -95,7 +101,10 @@ override_dh_auto_install:
 ~~~
 
 Now there are some things that can be removed from the package completely:
-~~~rm common.postinst Makefile~~~
+
+~~~
+rm common.postinst Makefile
+~~~
 
 Now to update the control file to use modern versions, a proper description,
 and make yourself a maintainer!

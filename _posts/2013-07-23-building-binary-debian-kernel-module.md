@@ -14,13 +14,13 @@ blogger_orig_url: http://dinosaursareforever.blogspot.com/2013/07/building-binar
 
 DKMS packaging works great for building out of tree kernel modules. However,
 what do you do when you need to install to a machine without a compiler? You
-can accompish this by using DKMS's ~~~mkdriverdisk~~~ functionality.
+can accompish this by using DKMS's `mkdriverdisk` functionality.
 
 First follow the steps [here][1] for setting up a proper DKMS package.
 
 After you've built the module successfully, you can use the following bash
 script to extract the .deb installer from the driverdisk. This way you can copy
-the deb file to the target machine and install. You must ensure that ~~~$(uname -rm)~~~
+the deb file to the target machine and install. You must ensure that `$(uname -rm)`
 on the target machine matches the build machine.
 
 ~~~bash

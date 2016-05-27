@@ -18,7 +18,7 @@ First, I formatted both drives. Then I ran extended smart self-tests to ensure
 I had decent drives. With RAID-1 and two drives I can only tolerate 1 drive
 failure.
 
-Next ensure mdadm is installed: ~~~sudo apt-get install mdadm~~~
+Next ensure mdadm is installed: `sudo apt-get install mdadm`
 
 Determine which dev devices the disks show up as.  Next, create the raid device
 pointing at the correct dev directory.
@@ -30,7 +30,7 @@ sudo mdadm --create /dev/md0 --level=1 --raid-devices=2 /dev/sdx
 
 The device will start a resync process which on my system takes a really long
 time (days). If you want to avoid this initial re-sync you can use
-~~~--assume-clean~~~ to avoid this. I would recommend letting it resync.
+`--assume-clean` to avoid this. I would recommend letting it resync.
 
 And there ya go.
 

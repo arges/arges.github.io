@@ -27,7 +27,7 @@ sudo apt-get install libvirt-bin qemu-kvm cpu-checker virtinst uvtool git
 sudo apt-get build-dep linux-image-`uname -r`
 ~~~
 
-Now, ensure kvm works: ~~~kvm-ok~~~
+Now, ensure kvm works: `kvm-ok`
 
 In this example we are using uvtool to create VMs using cloud images, but you
 could just as easily use a preseed install or a manual install via an ISO.
@@ -59,8 +59,8 @@ mkdir configs/ubuntu build/ubuntu
 Get an appropriate config for the bisect you are using and ensure it can
 reasonably `make oldconfig` with the kernel version you are using. For example,
 if we are bisecting v3.4 kernels, we can use an Ubuntu v3.5 series kernel config
-and ~~~yes '' | make oldconfig~~~ to ensure it is very close. Put this config
-into ~~~configs/ubuntu/config-min~~~.
+and `yes '' | make oldconfig` to ensure it is very close. Put this config
+into `configs/ubuntu/config-min`.
 
 Create the VM, ensure you have ssh keys setup on your local machine first:
 
@@ -68,7 +68,7 @@ Create the VM, ensure you have ssh keys setup on your local machine first:
 uvt-kvm create ubuntu release=trusty arch=amd64 --password ubuntu
 ~~~
 
-Ensure the VM can be ssh'ed to via ~~~ssh ubuntu@ubuntu~~~:
+Ensure the VM can be ssh'ed to via `ssh ubuntu@ubuntu`:
 
 ~~~bash
 echo "$(uvt-kvm ip ubuntu) ubuntu" | sudo tee -a /etc/hosts
@@ -99,7 +99,7 @@ sudo sed -i 's/exec \/sbin\/getty/exec \/sbin\/getty -a root/' /etc/init/ttyS0.c
 ~~~
 
 Ensure that `/root/.ssh/authorized_keys` on the VM contains the host keys so that
-~~~ssh root@ubuntu~~~ works automatically. If you are using the above commands
+`ssh root@ubuntu` works automatically. If you are using the above commands
 you can do:
 
 ~~~bash

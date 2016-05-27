@@ -38,10 +38,16 @@ The code in kgraft_patcher.c is the example found in [samples/kgraft][7]. Now we
 can build it easily using the Makefile I have in my project by typing make.
 
 Next, the module needs to be inserted using the following:
-~~~sudo insmod ./kgraft_patcher.ko~~~
+
+~~~
+sudo insmod ./kgraft_patcher.ko
+~~~
 
 Run the following to see if the module loaded properly:
-~~~lsmod | grep kgraft~~~
+
+~~~
+lsmod | grep kgraft
+~~~
 
 You'll notice some messages printed with the following:
 
@@ -56,7 +62,10 @@ required key missing - tainting kernel
 This means that not all processes have entered the kernel and may not have a
 "new universe" flag set.  Run the following to see which processes still needs
 to be updated.
-~~~cat /proc/*/kgr_in_progress~~~
+
+~~~
+cat /proc/*/kgr_in_progress
+~~~
 
 In order to get all processes to enter the kernel sometimes a signal needs to be
 sent to get the process to enter the kernel.
@@ -82,7 +91,10 @@ I've noticed that I had to also send a SIGSTOP followed by a SIGCONT to finally
 get everything synced up.
 
 Eventually you'll see:
-~~~[ 1600.480233] kgr succeeded~~~
+
+~~~
+[ 1600.480233] kgr succeeded
+~~~
 
 Now your kernel is running the new patch without rebooting!
 
