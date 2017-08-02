@@ -1,15 +1,17 @@
 ---
 layout: page
-title: About me 
+title: About me
 ---
 
 #### Work
 
-I enjoy creating new works and understanding our complex world. I am currently a
-Kernel Software Engineer for Canonical helping to make Ubuntu better. Primarily
-I fix bugs, and work on new code when I can. In addition, I've enjoyed music my
-entire life, and continue to play with friends and in a band locally. I also
-brew beer, garden, run races and read tons of books.
+I enjoy creating new works and understanding our fascinating world. I am
+currently a Lead Software Engineer at Vectra Networks working on new platforms,
+build infrastructure, system software, and system updates.  Previously I've
+worked at Canonical as a Kernel Engineer and technical lead on the live patch
+service project.  In addition, I've enjoyed music my entire life, and
+continue to play with friends and in a band locally. I'm fond of anything that
+makes one think critically, love reading, and being a dad.
 
 #### Social
 
@@ -26,7 +28,7 @@ brew beer, garden, run races and read tons of books.
 
 #### Picture
 
-The picture on the cover was taken on Mount Haleakalā on Maui, Hawaii.
+The picture on the cover was taken on Mount Haleakalā on Maui, Hawaii sometime in 2009.
 
 [1]: https://github.com/arges
 [2]: https://launchpad.net/~arges
