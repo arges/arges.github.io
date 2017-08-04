@@ -26,9 +26,10 @@ makes one think critically, love reading, and being a dad.
 - Wondercolour [Soundcloud][6]
 - Motorcars on the Moon [Soundcloud][7]
 
-#### Picture
+<!--#### Picture
 
 The picture on the cover was taken on Mount Haleakalā on Maui, Hawaii sometime in 2009.
+-->
 
 [1]: https://github.com/arges
 [2]: https://launchpad.net/~arges

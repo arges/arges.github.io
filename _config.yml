@@ -1,21 +1,17 @@
-name: Dinosaurs Are Forever
+title: Dinosaurs Are Forever
 description: code, music, creation
 meta_description: "The Personal Blog of Chris J Arges"
 
+baseurl: ""
+url: ""
+github_username:  arges
+
+# Build settings
 markdown: kramdown
-redcarpet:
-  extensions: ["tables"]
-highlighter: rouge
-logo: false
-paginate: 10
-baseurl: /
-domain_name: 'http://chrisarges.net'
-google_analytics: 'UA-36012839-2'
-
-# Details for the RSS feed generator
-url:            'http://chrisarges.net'
-author:         'Chris J Arges'
-
+theme: minima
 gems:
-  - jekyll-sitemap
+  - jekyll-feed
   - jekyll-paginate
+exclude:
+  - Gemfile
+  - Gemfile.lock
