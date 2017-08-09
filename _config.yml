@@ -15,3 +15,7 @@ gems:
 exclude:
   - Gemfile
   - Gemfile.lock
+
+disqus:
+  shortname: chrisarges
+google_analytics: UA-36012839-2
