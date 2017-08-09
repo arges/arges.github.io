@@ -3,7 +3,7 @@ description: code, music, creation
 meta_description: "The Personal Blog of Chris J Arges"
 
 baseurl: ""
-url: ""
+url: "http://chrisarges.net"
 github_username:  arges
 
 # Build settings
