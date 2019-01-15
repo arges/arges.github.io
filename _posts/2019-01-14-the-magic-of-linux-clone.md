@@ -245,7 +245,7 @@ A summary of the flags (as copied from the Linux kernel sources):
 ```
 
 
-In the "fork" case above we see only flags specifing clearing and settings of
+In the "fork" case above we see only flags specifying clearing and settings of
 TID are expressed. Thus, the pids and tid are different.
 
 In the above "thread" case we see that virtual memory, files, open files,
