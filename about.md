@@ -5,13 +5,15 @@ title: About me
 
 #### Work
 
-I enjoy creating new works and understanding our fascinating world. I am
-currently a Lead Software Engineer at Vectra Networks working on new platforms,
-build infrastructure, system software, and system updates.  Previously I've
-worked at Canonical as a Kernel Engineer and technical lead on the live patch
-service project.  In addition, I've enjoyed music my entire life, and
-continue to play with friends and in a band locally. I'm fond of anything that
-makes one think critically, love reading, and being a dad.
+I enjoy creating new works and understanding our fascinating world.
+I am currently building amazing software at an early stage cyber-security
+startup.  Previously I've worked at Vectra Networks as a Manager and Team
+Lead working on new platforms, build infrastructure, system software, and
+system updates.  Previously I’ve worked at Canonical as a Kernel Engineer and
+technical lead on the live patch service project.  In addition, I’ve enjoyed
+music my entire life, and continue to play with friends and in a band locally.
+I’m fond of anything that makes one think critically, love reading, and being a
+dad.
 
 #### Social
 
@@ -24,6 +26,7 @@ makes one think critically, love reading, and being a dad.
 
 - Wondercolour [Facebook][5]
 - Wondercolour [Soundcloud][6]
+- Datasponge [Soundcloud][8]
 - Motorcars on the Moon [Soundcloud][7]
 
 <!--#### Picture
@@ -38,3 +41,4 @@ The picture on the cover was taken on Mount Haleakalā on Maui, Hawaii sometime 
 [5]: https://www.facebook.com/wonderColour
 [6]: https://soundcloud.com/wondercolour
 [7]: https://soundcloud.com/motorcarsonthemoon
+[8]: https://soundcloud.com/datasponge-band
