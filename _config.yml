@@ -3,12 +3,12 @@ description: code, music, creation
 meta_description: "The Personal Blog of Chris J Arges"
 
 baseurl: ""
-url: "http://chrisarges.net"
+url: "https://chrisarges.net"
 github_username:  arges
 
 # Build settings
 markdown: kramdown
-theme: jekyll-theme-minimal
+theme: minima
 gems:
   - jekyll-feed
   - jekyll-paginate
