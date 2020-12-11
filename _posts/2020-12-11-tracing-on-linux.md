@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Tracing Linux: Fast, Compatible, Complete
+title: 'tracing linux'
 date: '2020-12-11T12:31:49-0600'
 author: arges
 tags:
