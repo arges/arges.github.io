@@ -6,10 +6,10 @@ title: About me
 #### Work
 
 I enjoy creating new works and understanding our fascinating world.
-I am currently building amazing cyber-security software at Confluera.
-Previously I've worked at Vectra Networks as a Manager and Team
+I am currently building amazing cyber-security software at [Confluera][9].
+Previously I've worked at [Vectra][10] Networks as a Manager and Team
 Lead working on new platforms, build infrastructure, system software, and
-system updates.  Previously I’ve worked at Canonical as a Kernel Engineer and
+system updates.  Previously I’ve worked at [Canonical][11] as a Kernel Engineer and
 technical lead on the live patch service project.  In addition, I’ve enjoyed
 music my entire life, and continue to play with friends and in a band locally.
 I’m fond of anything that makes one think critically, love reading, and being a
@@ -42,3 +42,6 @@ The picture on the cover was taken on Mount Haleakalā on Maui, Hawaii sometime 
 [6]: https://soundcloud.com/wondercolour
 [7]: https://soundcloud.com/motorcarsonthemoon
 [8]: https://soundcloud.com/datasponge-band
+[9]: https://confluera.com
+[10]: https://vectra.ai
+[11]: https://canonical.com
