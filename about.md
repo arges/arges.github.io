@@ -6,8 +6,8 @@ title: About me
 #### Work
 
 I enjoy creating new works and understanding our fascinating world.
-I am currently building amazing software at an early stage cyber-security
-startup.  Previously I've worked at Vectra Networks as a Manager and Team
+I am currently building amazing cyber-security software at Confluera.
+Previously I've worked at Vectra Networks as a Manager and Team
 Lead working on new platforms, build infrastructure, system software, and
 system updates.  Previously I’ve worked at Canonical as a Kernel Engineer and
 technical lead on the live patch service project.  In addition, I’ve enjoyed
