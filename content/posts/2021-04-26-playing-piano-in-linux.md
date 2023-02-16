@@ -48,7 +48,7 @@ aconnect 0:24 0:128
 ```
 
 Another approach would be using `aconnectgui` which provides a graphical way to connect devices.
-![Aconnect Gui]({{ site.url }}/assets/images/aconnectgui.png)
+![Aconnect Gui](/images/aconnectgui.png)
 
 ## Software
 
@@ -58,7 +58,7 @@ You will also need software to play sounds. Below are a few options.
 
 The Virtual MIDI Piano Keyboard or [VMPK][2] can generate MIDI sounds and display notes as they are played. One can install this via a normal package manager such as `apt install vmpk`.
 
-![VMPK Keyboard]({{ site.url }}/assets/images/keyboard.png)
+![VMPK Keyboard](/images/keyboard.png)
 
 ### Qsynth
 

@@ -93,7 +93,7 @@ kernel by `0a16b60758433` which was released in v2.6.28. The
 `a871bd33a6c` which was released in v2.6.32.
 
 These tracepoints can be accessed via `ftrace` tracefs filesystem, for example:
-```
+```bash
 # echo 1 > /sys/kernel/debug/tracing/events/syscalls/sys_enter_open
 # cat /sys/kernel/debug/tracing/trace_pipe
  systemd-journal-365   [000] .... 88393.862127: sys_open(filename: 55f45105d8a0, flags: 80042, mode: 1a0)

@@ -12,7 +12,7 @@ tags:
 
 Here is a really cool car robot I built:
 
-![Image of Robot]({{ site.url }}/assets/images/robotv1.jpg)
+![Image of Robot](/images/robotv1.jpg)
 
 This post will document roughly how I put it together. If you want to build
 your own you can read this guide for an outline and perhaps share or improve

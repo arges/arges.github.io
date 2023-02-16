@@ -1,0 +1,38 @@
+theme = "cactus"
+copyright = "Chris J Arges"
+description = "Dinosaurs are Forever"
+paginate = 20
+
+[params]
+colortheme = "dark"
+showAllPostsOnHomePage = true
+tocInline = true
+
+logo = "dinosaur.jpg"
+favicon = "favicon.ico"
+
+[[params.social]]
+  name = "github"
+  link = "https://github.com/arges"
+
+[[params.social]]
+  name = "email"
+  link = "christopherarges@gmail.com"
+
+[[params.social]]
+  name = "linkedin"
+  link = "https://www.linkedin.com/in/carges/"
+
+[[params.social]]
+  name = "twitter"
+  link = "https://twitter.com/chrisarges"
+
+[[menu.main]]
+name = "Home"
+url = "/"
+weight = 1
+
+[[menu.main]]
+name = "About"
+url = "/about"
+weight = 4

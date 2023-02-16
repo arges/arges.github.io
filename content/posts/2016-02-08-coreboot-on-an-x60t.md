@@ -46,7 +46,7 @@ Here's how I wired it:
 
 Here's a picture of the RPi2 connected to the clip and cliped onto the BIOS IC.
 
-![Image of flashing the bios]({{ site.url }}/assets/images/bios_flash.jpg)
+![Image of flashing the bios](/images/bios_flash.jpg)
 
 Software
 ======
@@ -132,5 +132,5 @@ issue for me.
 [3]: https://github.com/bibanon/Coreboot-ThinkPads/wiki/BIOS-Flashchip-Identification-Method
 [4]: https://github.com/bibanon/Coreboot-ThinkPads/wiki/ThinkPad-X60
 [5]: http://www.win-raid.com/t58f16-Guide-Recover-from-failed-BIOS-flash-using-Raspberry-PI.html
-[6]: {{ site.url }}/assets/files/config-x60t
+[6]: /files/config-x60t
 [7]: https://www.coreboot.org/Build_HOWTO

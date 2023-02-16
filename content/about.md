@@ -3,6 +3,8 @@ layout: page
 title: About me
 ---
 
+![Mount Haleakala](/images/haleakala.jpg)
+
 #### Work
 
 I enjoy creating new works and understanding our fascinating world. I currently
@@ -23,10 +25,9 @@ Opinions are my own and not the views of any employer or organization.
 - [launchpad][2]
 - [linkedin][3]
 
-<!--#### Picture
+#### Picture
 
 The picture on the cover was taken on Mount Haleakalā on Maui, Hawaii sometime in 2009.
--->
 
 [1]: https://github.com/arges
 [2]: https://launchpad.net/~arges
