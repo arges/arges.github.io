@@ -1,6 +1,7 @@
 theme = "cactus"
 copyright = "Chris J Arges"
 description = "Dinosaurs are Forever"
+baseurl = "chrisarges.net"
 paginate = 20
 
 [params]
