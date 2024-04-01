@@ -1,5 +1,5 @@
 ---
-layout: post
+type: post
 title: bpf for linux tracing
 date: '2019-03-21T11:54:37-0500'
 author: arges

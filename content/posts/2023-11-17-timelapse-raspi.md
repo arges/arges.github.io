@@ -1,5 +1,5 @@
 ---
-layout: post
+type: post
 title: 'setting up a timelapse raspberry pi'
 date: '2023-11-17'
 author: arges

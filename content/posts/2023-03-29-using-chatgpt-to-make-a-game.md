@@ -1,5 +1,5 @@
 ---
-layout: post
+type: post
 title: 'making a game with chatgpt'
 date: '2023-03-29'
 author: arges

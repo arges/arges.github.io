@@ -1,5 +1,5 @@
 ---
-layout: post
+type: post
 title: flashing coreboot on an x60t
 date: '2016-02-08T08:48:47-0600'
 author: arges

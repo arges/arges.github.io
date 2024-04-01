@@ -1,5 +1,5 @@
 ---
-layout: post
+type: post
 title: using kgraft with ubuntu
 date: '2014-06-06T11:50:00.000-07:00'
 author: arges

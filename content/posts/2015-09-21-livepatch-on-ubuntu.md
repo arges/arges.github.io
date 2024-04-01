@@ -1,5 +1,5 @@
 ---
-layout: post
+type: post
 title: using linux livepatch on ubuntu
 date: '2015-09-21T13:03:26-0500'
 author: arges

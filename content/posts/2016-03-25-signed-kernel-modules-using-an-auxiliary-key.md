@@ -1,5 +1,5 @@
 ---
-layout: post
+type: post
 title: signed kernel modules using an auxiliary key
 date: '2016-03-25T14:55:59-0500'
 author: arges

@@ -1,5 +1,5 @@
 ---
-layout: post
+type: post
 title: the magic of linux clone
 date: '2019-01-14T12:44:27-0600'
 author: arges

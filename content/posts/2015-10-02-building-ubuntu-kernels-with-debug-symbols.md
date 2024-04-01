@@ -1,5 +1,5 @@
 ---
-layout: post
+type: post
 title: building ubuntu kernels with debug symbols
 date: '2015-10-02T08:53:52-0500'
 author: arges

@@ -1,5 +1,5 @@
 ---
-layout: post
+type: post
 title: using terraform with ansible
 date: '2018-01-05T15:24:58-0600'
 author: arges

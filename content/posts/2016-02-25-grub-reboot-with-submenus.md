@@ -1,5 +1,5 @@
 ---
-layout: post
+type: post
 title: grub-reboot with submenus
 date: '2016-02-25T10:05:51-0500'
 author: arges

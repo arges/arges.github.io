@@ -1,5 +1,5 @@
 ---
-layout: post
+type: post
 title: using gcov/lcov with the linux kernel
 date: '2014-11-13T09:45:00.003-08:00'
 author: arges

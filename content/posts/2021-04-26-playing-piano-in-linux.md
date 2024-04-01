@@ -1,5 +1,5 @@
 ---
-layout: post
+type: post
 title: 'playing piano in linux'
 date: '2021-04-26'
 author: arges

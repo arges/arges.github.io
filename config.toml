@@ -1,39 +1,55 @@
-theme = "cactus"
-copyright = "Chris J Arges"
-description = "Dinosaurs are Forever"
-baseurl = "https://chrisarges.net"
-paginate = 20
+baseURL = "https://chrisarges.net"
+title = "Chris J Arges"
+theme = "gokarna"
+languageCode = "en"
+defaultContentLanguage = "en"
+enableEmoji = true
+enableRobotsTXT = true
+
+pygmentsStyle = "monokai"
 
 [params]
-colortheme = "dark"
-showAllPostsOnHomePage = true
-tocInline = true
+  description = "Dinosaurs are Forever"
+  ShowBackToTopButton = true # true or false for "back to top" button on posts
+  colortheme = "dark"
+  logo = "dinosaur.jpg"
+  favicon = "favicon.ico"
+  socialIcons = [
+    {name = "twitter", url = "https://twitter.com/chrisarges"},
+    {name = "linkedin", url = "https://www.linkedin.com/in/carges/"},
+    {name = "github", url = "https://github.com/arges"},
+    {name = "buymeacoffee", url = "https://www.buymeacoffee.com/arges"},
+    {name = "email", url = "mailto:christopherarges@gmail.com"}
+  ]
+  metaKeywords = ["blog", "arges", "linux", "tech", "security", "startup", "networking"]
 
-logo = "dinosaur.jpg"
-favicon = "favicon.ico"
+[menu]
+  [[menu.main]]
+    name = "Home"
+    pre = "<span data-feather='home'></span>"
+    url = "/"
+    weight = 1
 
-[[params.social]]
-  name = "github"
-  link = "https://github.com/arges"
+  [[menu.main]]
+    name = "Posts"
+    pre = "<span data-feather='book'></span>"
+    url = "/posts/"
+    weight = 2
 
-[[params.social]]
-  name = "email"
-  link = "christopherarges@gmail.com"
+  [[menu.main]]
+    name = "Tags"
+    pre = "<span data-feather='tag'></span>"
+    url = "/tags/"
+    weight = 4
 
-[[params.social]]
-  name = "linkedin"
-  link = "https://www.linkedin.com/in/carges/"
+  [[menu.main]]
+    identifier = "rss"
+    pre = "<span data-feather='rss'></span>"
+    url = "/index.xml"
+    weight = 7
 
-[[params.social]]
-  name = "twitter"
-  link = "https://twitter.com/chrisarges"
-
-[[menu.main]]
-name = "Home"
-url = "/"
-weight = 1
-
-[[menu.main]]
-name = "About"
-url = "/about"
-weight = 4
+[markup]
+  [markup.tableOfContents]
+    startLevel = 1
+    endLevel = 4
+    ordered = false

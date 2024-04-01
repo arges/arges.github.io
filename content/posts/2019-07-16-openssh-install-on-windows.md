@@ -1,5 +1,5 @@
 ---
-layout: post
+type: post
 title: install openssh on windows
 date: '2019-07-16T09:32:28-0500'
 author: arges

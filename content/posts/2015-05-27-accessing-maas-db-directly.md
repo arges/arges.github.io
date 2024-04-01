@@ -1,5 +1,5 @@
 ---
-layout: post
+type: post
 title: accessing maas database directly
 date: '2015-05-27T13:02:46-0500'
 author: arges

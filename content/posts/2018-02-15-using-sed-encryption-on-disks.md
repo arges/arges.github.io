@@ -1,5 +1,5 @@
 ---
-layout: post
+type: post
 title: using sed encryption on harddrives
 date: '2018-02-15T21:42:03-0600'
 author: arges

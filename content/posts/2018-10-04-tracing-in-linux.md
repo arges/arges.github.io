@@ -1,5 +1,5 @@
 ---
-layout: post
+type: post
 title: tracing in linux
 date: '2018-10-04T09:39:10-0500'
 author: arges

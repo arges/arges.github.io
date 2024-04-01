@@ -1,5 +1,5 @@
 ---
-layout: post
+type: post
 title: linux make deb-pkg speedup
 date: '2015-07-30T15:20:31-0500'
 author: arges

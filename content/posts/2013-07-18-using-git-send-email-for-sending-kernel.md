@@ -1,5 +1,5 @@
 ---
-layout: post
+type: post
 title: using git send-email for sending kernel patches
 date: '2013-07-18T15:27:00.002-07:00'
 author: arges

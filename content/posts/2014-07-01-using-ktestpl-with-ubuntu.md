@@ -1,5 +1,5 @@
 ---
-layout: post
+type: post
 title: using ktest.pl with ubuntu
 date: '2014-07-01T13:10:00.002-07:00'
 author: arges

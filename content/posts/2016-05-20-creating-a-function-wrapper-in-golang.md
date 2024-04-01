@@ -1,5 +1,5 @@
 ---
-layout: post
+type: post
 title: creating a function wrapper in golang
 date: '2016-05-20T15:53:09-0500'
 author: arges

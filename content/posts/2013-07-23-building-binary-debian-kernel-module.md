@@ -1,5 +1,5 @@
 ---
-layout: post
+type: post
 title: building a binary debian kernel module package with dkms
 date: '2013-07-23T14:40:00.000-07:00'
 author: arges

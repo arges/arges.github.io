@@ -1,5 +1,5 @@
 ---
-layout: post
+type: post
 title: use default gpg key for debuild
 date: '2013-09-10T09:30:00.002-07:00'
 author: arges

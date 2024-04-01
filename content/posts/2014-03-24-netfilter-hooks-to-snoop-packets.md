@@ -1,5 +1,5 @@
 ---
-layout: post
+type: post
 title: netfilter hooks to snoop packets
 date: '2014-03-24T07:47:00.001-07:00'
 author: arges

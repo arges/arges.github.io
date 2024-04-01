@@ -1,5 +1,5 @@
 ---
-layout: post
+type: post
 title: automatic bisection of qemu with console and monitor interaction
 date: '2013-12-16T14:39:00.001-08:00'
 author: arges

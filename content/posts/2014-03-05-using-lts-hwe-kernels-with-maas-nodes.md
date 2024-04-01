@@ -1,5 +1,5 @@
 ---
-layout: post
+type: post
 title: using LTS HWE kernels with MAAS nodes
 date: '2014-03-05T14:21:00.002-08:00'
 author: arges

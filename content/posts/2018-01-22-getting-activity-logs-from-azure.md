@@ -1,5 +1,5 @@
 ---
-layout: post
+type: post
 title: getting activity logs from azure
 date: '2018-01-22T11:26:32-0600'
 author: arges

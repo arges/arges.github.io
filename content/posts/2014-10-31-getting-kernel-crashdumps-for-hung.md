@@ -1,5 +1,5 @@
 ---
-layout: post
+type: post
 title: getting kernel crashdumps for hung machines
 date: '2014-10-31T13:53:00.001-07:00'
 author: arges

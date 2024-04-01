@@ -1,5 +1,5 @@
 ---
-layout: post
+type: post
 title: building a proper debian source package with dkms
 date: '2013-09-05T07:10:00.001-07:00'
 author: arges

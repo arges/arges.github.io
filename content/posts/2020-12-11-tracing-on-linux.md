@@ -1,5 +1,5 @@
 ---
-layout: post
+type: post
 title: 'tracing linux'
 date: '2020-12-11T12:31:49-0600'
 author: arges

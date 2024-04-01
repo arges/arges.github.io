@@ -1,5 +1,5 @@
 ---
-layout: post
+type: post
 title: qemu/kvm guest debugging
 date: '2015-04-13T12:24:22-0500'
 author: arges

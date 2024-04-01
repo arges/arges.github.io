@@ -1,5 +1,5 @@
 ---
-layout: post
+type: post
 title: a simple robotic car
 date: '2016-03-18T22:56:12-0500'
 author: arges

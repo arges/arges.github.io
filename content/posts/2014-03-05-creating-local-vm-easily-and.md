@@ -1,5 +1,5 @@
 ---
-layout: post
+type: post
 title: creating a local vm easily and automatically
 date: '2014-03-05T14:22:00.000-08:00'
 author: arges

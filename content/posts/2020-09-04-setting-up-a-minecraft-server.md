@@ -1,5 +1,5 @@
 ---
-layout: post
+type: post
 title: setting up a Minecraft server
 date: '2020-09-04T10:22:46-0500'
 author: arges

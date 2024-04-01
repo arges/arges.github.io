@@ -1,5 +1,5 @@
 ---
-layout: post
+type: post
 title: setup an external drives as raid1
 date: '2013-12-16T14:37:00.000-08:00'
 author: arges

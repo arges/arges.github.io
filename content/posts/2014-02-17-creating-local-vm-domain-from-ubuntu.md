@@ -1,5 +1,5 @@
 ---
-layout: post
+type: post
 title: creating a local vm domain from an ubuntu cloud image
 date: '2014-02-17T11:43:00.003-08:00'
 author: arges

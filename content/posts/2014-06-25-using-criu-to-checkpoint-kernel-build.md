@@ -1,5 +1,5 @@
 ---
-layout: post
+type: post
 title: using CRIU to checkpoint a kernel build
 date: '2014-06-25T13:46:00.001-07:00'
 author: arges
