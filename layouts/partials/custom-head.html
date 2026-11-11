@@ -1,0 +1,8 @@
+{{- /*
+  Content-Security-Policy. GitHub Pages can't send response headers, so this is
+  delivered as a meta tag (frame-ancestors/report-uri are unsupported this way).
+  'unsafe-inline' is needed for the gokarna theme's inline <script> blocks and
+  onclick handlers; all scripts are still restricted to this origin.
+*/ -}}
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' https: data:; font-src 'self'; connect-src 'self'; media-src 'self' https:; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
+<meta name="referrer" content="strict-origin-when-cross-origin">

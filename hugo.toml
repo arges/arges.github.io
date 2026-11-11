@@ -1,16 +1,14 @@
 baseURL = "https://chrisarges.net"
 title = "Chris J Arges"
 theme = "gokarna"
-languageCode = "en"
+locale = "en"
 defaultContentLanguage = "en"
 enableEmoji = true
 enableRobotsTXT = true
 
-pygmentsStyle = "monokai"
-
 [params]
   description = "Dinosaurs are Forever"
-  ShowBackToTopButton = true # true or false for "back to top" button on posts
+  showBackToTopButton = true
   colortheme = "dark"
   logo = "dinosaur.jpg"
   favicon = "favicon.ico"
@@ -18,8 +16,7 @@ pygmentsStyle = "monokai"
     {name = "twitter", url = "https://twitter.com/chrisarges"},
     {name = "linkedin", url = "https://www.linkedin.com/in/carges/"},
     {name = "github", url = "https://github.com/arges"},
-    {name = "buymeacoffee", url = "https://www.buymeacoffee.com/arges"},
-    {name = "email", url = "mailto:christopherarges@gmail.com"}
+    {name = "buymeacoffee", url = "https://www.buymeacoffee.com/arges"}
   ]
   metaKeywords = ["blog", "arges", "linux", "tech", "security", "startup", "networking"]
 
@@ -53,3 +50,12 @@ pygmentsStyle = "monokai"
     startLevel = 1
     endLevel = 4
     ordered = false
+  [markup.highlight]
+    style = "monokai"
+
+[minify]
+  minifyOutput = true
+
+# Legacy Blogger-imported posts are authored as .html content files.
+[security]
+  allowContent = ['^text/(markdown|html)$']
